@@ -1,0 +1,13 @@
+.container {
+  max-width: 1200px;
+  padding: 0;
+}
+nav {
+  font-size: 0.8125rem;
+  font-weight: 300;
+}
+.hr1 {
+  width: 1px;
+  height: 15px;
+  background-color: #ffffff;
+}
