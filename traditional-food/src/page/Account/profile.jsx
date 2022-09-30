@@ -20,7 +20,7 @@ const Profile = () => {
           <div className="card-body">
             <div className="d-flex text-black">
               <div className="flex-shrink-0">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="Generic placeholder image" className="img-fluid" />
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="" className="img-fluid" />
               </div>
               <div className="flex-grow-1 ms-3">
                 {profile.length > 0 &&
