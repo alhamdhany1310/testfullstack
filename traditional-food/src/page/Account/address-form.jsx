@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { createAddress, updateAddress } from '../../features/address/addressSlice';
 
 const AddressForm = () => {
@@ -80,11 +80,14 @@ const AddressForm = () => {
 
   return (
     <div>
-      <div className="headers">
+      <div className="headers bg-warning">
         <div className="container">
           <div className="d-flex align-items-center">
             <div className="d-flex">
-              <span className="text-brand text-dark">Shofood</span>
+              <img className="brand-img mb-2" src="https://asset.hamdhany12.repl.co/assets/brand.png" alt="" />
+              <Link to="/account" className="text-brand text-white text-decoration-none pt-2">
+                Shofood
+              </Link>
             </div>
           </div>
         </div>

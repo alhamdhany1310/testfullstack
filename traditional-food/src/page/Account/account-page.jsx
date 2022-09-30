@@ -59,17 +59,19 @@ const AccountPage = () => {
 
   return (
     <div>
-      <div className="headers">
+      <div className="headers bg-warning">
         <div className="container">
           <div className="d-flex align-items-center">
             <div className="d-flex">
-              <Link to="/">
-                <span className="text-brand text-dark">Shofood</span>
+              <img className="brand-img mb-2" src="https://asset.hamdhany12.repl.co/assets/brand.png" alt="" />
+              <Link to="/" className="text-brand text-white text-decoration-none pt-2">
+                Shofood
               </Link>
             </div>
           </div>
         </div>
       </div>
+
       <div className="container mt-4">
         <div className="row">
           <div className="col-lg-3 my-lg-0 my-md-1">
@@ -108,7 +110,7 @@ const AccountPage = () => {
                     <div className="fas fa-right-from-bracket pt-2 me-3"></div>
                     <div className="d-flex flex-column">
                       <div className="link">Keluar</div>
-                      <div className="link-desc">View & Manage orders and returns</div>
+                      <div className="link-desc">Exit from your account</div>
                     </div>
                   </div>
                 </li>

@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4000/auth/';
+const API_URL = 'http://8.219.67.47:4000/auth/';
 
 // Register user
 const register = async (userData) => {
   const response = await axios.post(API_URL + 'register', userData);
 
-  if (response.data) {
-    localStorage.setItem('user', JSON.stringify(response.data));
-  }
+  // if (response.data) {
+  //   localStorage.setItem('user', JSON.stringify(response.data));
+  // }
 
   return response.data;
 };

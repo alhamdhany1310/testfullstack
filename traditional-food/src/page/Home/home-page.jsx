@@ -5,12 +5,13 @@ import { useEffect, useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { getProduct } from '../../features/product/productSlice';
-// import { getAddress } from '../../features/address/addressSlice';
-// import { getOrder } from '../../features/order/orderSlice';
-// import { getCart } from '../../features/cart/cartSlice';
-// import { me } from '../../features/auth/authSlice';
+import { getAddress } from '../../features/address/addressSlice';
+import { getOrder } from '../../features/order/orderSlice';
+import { getCart } from '../../features/cart/cartSlice';
+import { me } from '../../features/auth/authSlice';
 import Header from '../../component/Header';
 import './home.css';
+import Footer from '../../component/footer';
 
 const HomePage = ({ setCount, count }) => {
   const navigate = useNavigate();
@@ -39,13 +40,13 @@ const HomePage = ({ setCount, count }) => {
 
   // ======================== Get category ==========================
   const getDataCategory = useCallback(async () => {
-    const response = await axios.get('http://localhost:4000/api/category');
+    const response = await axios.get('http://8.219.67.47:4000/api/category');
     setGetCategory(response.data);
   }, []);
 
   // ========================== Get tag ============================
   const getDataTag = useCallback(async () => {
-    const response = await axios.get('http://localhost:4000/api/tag');
+    const response = await axios.get('http://8.219.67.47:4000/api/tag');
     setGetTag(response.data);
   }, []);
 
@@ -101,12 +102,12 @@ const HomePage = ({ setCount, count }) => {
     getDataCategory();
     getDataTag();
 
-    // dispatch(me());
-    // dispatch(getAddress());
-    // dispatch(getOrder());
-    // dispatch(getCart());
+    dispatch(me());
+    dispatch(getAddress());
+    dispatch(getOrder());
+    dispatch(getCart());
     setCount((prev) => (prev = cart.length));
-  }, [getDataTag, getDataCategory, cart.length, setCount]);
+  }, [getDataTag, dispatch, getDataCategory, cart.length, setCount]);
   //  dispatch,
 
   useEffect(() => {
@@ -163,17 +164,17 @@ const HomePage = ({ setCount, count }) => {
       <div className="content">
         <div className="home-header">
           <div className="container pt-4">
-            <div className="row wrap-carousel pb-4">
-              <div className="col-8 flex">
+            <div className="row pb-4 pt-2">
+              <div className="col-8 flex wrap-carousel">
                 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
-                  <div className="carousel-inner px-1">
-                    <div className="carousel-item active">
-                      <img src="https://asset.hamdhany12.repl.co/assets/slider/3.png" className="d-block w-100" alt="..." />
+                  <div className="carousel-inner px-1 mt-0">
+                    <div className="carousel-item active h-75">
+                      <img src="https://asset.hamdhany12.repl.co/assets/slider/3.png" className="d-block w-100 " alt="..." />
                     </div>
-                    <div className="carousel-item">
+                    <div className="carousel-item h-75">
                       <img src="https://asset.hamdhany12.repl.co/assets/slider/4.png" className="d-block w-100" alt="..." />
                     </div>
-                    <div className="carousel-item">
+                    <div className="carousel-item h-75">
                       <img src="https://asset.hamdhany12.repl.co/assets/slider/5.png" className="d-block w-100" alt="..." />
                     </div>
                   </div>
@@ -238,6 +239,7 @@ const HomePage = ({ setCount, count }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

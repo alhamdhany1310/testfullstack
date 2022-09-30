@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, reset } from '../../features/auth/authSlice';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Spinner from '../../component/Spinner';
 import './login.css';
+import Footer from '../../component/footer';
 
 function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -27,7 +28,10 @@ function Login() {
   // ====================== useEffect ========================
   useEffect(() => {
     if (isError) console.error(message);
-    if (isSuccess || user) navigate('/account');
+
+    if (isSuccess || user) {
+      navigate('/');
+    }
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
@@ -39,7 +43,11 @@ function Login() {
         <div className="container">
           <div className="d-flex align-items-center">
             <div className="d-flex">
-              <span className="text-brand text-dark">Shofood</span>
+              <img className="brand-img mb-2" src="https://www.freepnglogos.com/uploads/shopee-logo-png/shopee-logo-shop-with-the-gentlemen-collection-and-win-the-shopee-0.png" alt="" />
+              <Link to="/" className="text-brand text-danger text-decoration-none pt-2 px-1">
+                Shofood
+              </Link>
+              <div className="text-brand text-dark pt-2 px-3">Log In</div>
             </div>
           </div>
         </div>
@@ -74,6 +82,7 @@ function Login() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

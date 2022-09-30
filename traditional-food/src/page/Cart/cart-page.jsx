@@ -109,7 +109,7 @@ const CartPage = ({ setCount }) => {
                 {data.map((items) => (
                   <div key={items.product._id + Math.floor(Math.random() * 100)} className="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
                     <div className="mr-1">
-                      <img className="rounded" alt="Foto Product" src={`http://localhost:4000/public/${items.product.image_url}`} width="70" />
+                      <img className="rounded" alt="Foto Product" src={`http://8.219.67.47:4000/public/${items.product.image_url}`} width="70" />
                     </div>
                     <div className="d-flex flex-column align-items-center product-details">
                       <span className="font-weight-bold">{items.product.name}</span>

@@ -24,9 +24,9 @@ const Profile = () => {
               </div>
               <div className="flex-grow-1 ms-3">
                 {profile.length > 0 &&
-                  profile.map(({ id, full_name, email }) => {
+                  profile.map(({ customer_id, full_name, email }) => {
                     return (
-                      <div key={id}>
+                      <div key={customer_id}>
                         <h5 className="mb-1">{full_name}</h5>
                         <p className="mb-2 pb-1">{email}</p>
                       </div>

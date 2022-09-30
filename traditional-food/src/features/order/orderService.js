@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4000/api/order/';
+const API_URL = 'http://8.219.67.47:4000/api/order/';
 
 //Get cart
 const getOrder = async (num, token) => {
@@ -43,7 +43,7 @@ const getInvoice = async (id, token) => {
     },
   };
 
-  const response = await axios.get('http://localhost:4000/api/invoice/' + id, config);
+  const response = await axios.get('http://8.219.67.47:4000/api/invoice/' + id, config);
 
   console.log('invoice', response.data);
 

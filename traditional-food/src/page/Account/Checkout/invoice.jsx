@@ -50,12 +50,37 @@ const Invoice = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td>Payment to</td>
+                        <td>Payment Method</td>
                         <td>
-                          <p>test</p>
-                          <p>test@gmail.com</p>
-                          <p>BCA</p>
-                          <p>xxxxx-xxxxxx-333-34</p>
+                          <div className="justify-content-start align-items-center p-2 bg-light rounded">
+                            <div className="d-flex flex-row">
+                              <div className="shadow-sm p-2 mb-1 bg-body rounded px-2" data-bs-toggle="collapse" href="#seabank" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <img src="https://cf.shopee.co.id/file/5589c755ab085d2fac3e33f4755c6a9e" alt="" />
+                              </div>
+                              <div className="shadow-sm p-2 mb-1 bg-body rounded mx-1" data-bs-toggle="collapse" href="#seabank" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <img src="https://cf.shopee.co.id/file/49656d7100598b911a1f247dec64fda4" alt="" />
+                              </div>
+                              <div className="shadow-sm p-2 mb-1 bg-body rounded mx-1" data-bs-toggle="collapse" href="#seabank" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <img src="https://cf.shopee.co.id/file/e7865f5fb066b8b5e73f9d5c36fc7154" alt="" />
+                              </div>
+                              <div className="shadow-sm p-2 mb-1 bg-body rounded mx-1" data-bs-toggle="collapse" href="#seabank" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <img src="https://cf.shopee.co.id/file/1ad101bcf0e90b74b5697db1511de529" alt="" />
+                              </div>
+                              <div className="shadow-sm p-2 mb-1 bg-body rounded mx-1" data-bs-toggle="collapse" href="#seabank" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <img src="https://cf.shopee.co.id/file/41e4c83bae13f67b9898c7579dd53d05" alt="" />
+                              </div>
+                              <div className="shadow-sm p-2 mb-1 bg-body rounded mx-1" data-bs-toggle="collapse" href="#seabank" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <img src="https://cf.shopee.co.id/file/9a08d3abab3dd059fff945c72ca372d9" alt="" />
+                              </div>
+                            </div>
+                            <div class="collapse" id="seabank">
+                              <div class="shadow-sm p-2 mb-1 bg-body rounded px-2">
+                                <p>Silahkan Transfer Pembayarannya ke:</p>
+                                <p>Nama : Al Hamdhany</p>
+                                <p>No. Rek : 0987265138817299938</p>
+                              </div>
+                            </div>
+                          </div>
                         </td>
                       </tr>
                     </tbody>

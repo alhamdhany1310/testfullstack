@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4000/api/delivery-address/';
+const API_URL = 'http://8.219.67.47:4000/api/delivery-address/';
 
 //Get Address
 const getAddress = async (token) => {

@@ -16,7 +16,7 @@ const ListProduct = ({ pageVisited, productPerPage, filterTagHandler, setCount }
       <div className="blog-card">
         <div className="meta">
           <div className="photo">
-            <img src={`http://localhost:4000/public/${products.image_url}`} alt="foto Product" />
+            <img src={`http://8.219.67.47:4000/public/${products.image_url}`} alt="foto Product" />
           </div>
         </div>
         <div className="row tags">

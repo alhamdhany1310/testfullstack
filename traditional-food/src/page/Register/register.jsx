@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { register } from '../../features/auth/authSlice';
-import { useNavigate } from 'react-router-dom';
-// import Spinner from '../../component/Spinner';
+import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../../component/footer';
+import Spinner from '../../component/Spinner';
 
 function Register() {
   const navigate = useNavigate();
@@ -30,12 +31,9 @@ function Register() {
     // console.log({ isSuccess, registerUser });
     if (isSuccess || registerUser) {
       navigate('/login');
-      // console.log('cek status');
     }
-
-    // dispatch(reset());
-    // if (isLoading) return <Spinner />;
   }, [registerUser, isError, isSuccess, message, navigate, dispatch]);
+  if (isLoading) return <Spinner />;
 
   return (
     <div>
@@ -43,7 +41,11 @@ function Register() {
         <div className="container">
           <div className="d-flex align-items-center">
             <div className="d-flex">
-              <span className="text-brand text-dark">Shofood</span>
+              <img className="brand-img mb-2" src="https://www.freepnglogos.com/uploads/shopee-logo-png/shopee-logo-shop-with-the-gentlemen-collection-and-win-the-shopee-0.png" alt="" />
+              <Link to="/" className="text-brand text-danger text-decoration-none pt-2 px-1">
+                Shofood
+              </Link>
+              <div className="text-brand text-dark pt-2 px-3">Register</div>
             </div>
           </div>
         </div>
@@ -79,6 +81,7 @@ function Register() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
