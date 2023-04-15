@@ -19,7 +19,6 @@ const register = async (req, res, next) => {
         fields: error.errors,
       });
     }
-
     next();
   }
 };
@@ -41,17 +40,13 @@ const localStrategy = async (email, password, done) => {
 const login = async (req, res, next) => {
   passport.authenticate('local', async function (err, user) {
     if (err) return next(err);
-
     if (!user)
       return res.status(400).json({
         error: 1,
         message: 'Email or Password incorect',
       });
-
     let signed = jwt.sign(user, config.secretkey);
-
     await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
-
     res.json({
       message: 'Login successfully',
       token: signed,
